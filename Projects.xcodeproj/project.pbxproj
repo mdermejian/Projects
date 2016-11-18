@@ -15,6 +15,7 @@
 		806294681DDC78B200FC69AA /* StarShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806294671DDC78B200FC69AA /* StarShapeView.swift */; };
 		8062946A1DDDB9DD00FC69AA /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806294691DDDB9DD00FC69AA /* ProjectViewController.swift */; };
 		8062946C1DDDB9F800FC69AA /* ExpandAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062946B1DDDB9F800FC69AA /* ExpandAnimator.swift */; };
+		8062946F1DDEFFE400FC69AA /* SegueHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062946E1DDEFFE400FC69AA /* SegueHandlerProtocol.swift */; };
 		80B731EF1DDA362F006653BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B731EE1DDA362F006653BF /* AppDelegate.swift */; };
 		80B731F41DDA362F006653BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B731F21DDA362F006653BF /* Main.storyboard */; };
 		80B731F61DDA362F006653BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B731F51DDA362F006653BF /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		806294671DDC78B200FC69AA /* StarShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarShapeView.swift; sourceTree = "<group>"; };
 		806294691DDDB9DD00FC69AA /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
 		8062946B1DDDB9F800FC69AA /* ExpandAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandAnimator.swift; sourceTree = "<group>"; };
+		8062946E1DDEFFE400FC69AA /* SegueHandlerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerProtocol.swift; sourceTree = "<group>"; };
 		80B731EB1DDA362F006653BF /* Projects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B731EE1DDA362F006653BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B731F31DDA362F006653BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,6 +115,16 @@
 			name = "API Responses";
 			sourceTree = "<group>";
 		};
+		8062946D1DDEFFC100FC69AA /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				80B732131DDA3D59006653BF /* ResponseObjectSerializableProtocol.swift */,
+				80B732151DDA3D6F006653BF /* ResponseCollectionSerializable.swift */,
+				8062946E1DDEFFE400FC69AA /* SegueHandlerProtocol.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		80B731E21DDA362F006653BF = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +148,7 @@
 		80B731ED1DDA362F006653BF /* Projects */ = {
 			isa = PBXGroup;
 			children = (
+				8062946D1DDEFFC100FC69AA /* Protocols */,
 				80B732191DDA3DA0006653BF /* Model Objects */,
 				80B7320E1DDA3CF3006653BF /* Networking */,
 				80B731EE1DDA362F006653BF /* AppDelegate.swift */,
@@ -165,8 +178,6 @@
 		80B7320E1DDA3CF3006653BF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				80B732131DDA3D59006653BF /* ResponseObjectSerializableProtocol.swift */,
-				80B732151DDA3D6F006653BF /* ResponseCollectionSerializable.swift */,
 				80B732171DDA3D8C006653BF /* TWError.swift */,
 				80B7321C1DDA4AA2006653BF /* RestCommandBuilder.swift */,
 				80B7321E1DDA5566006653BF /* ProjectsController.swift */,
@@ -405,6 +416,7 @@
 				806294681DDC78B200FC69AA /* StarShapeView.swift in Sources */,
 				8062946A1DDDB9DD00FC69AA /* ProjectViewController.swift in Sources */,
 				80B731EF1DDA362F006653BF /* AppDelegate.swift in Sources */,
+				8062946F1DDEFFE400FC69AA /* SegueHandlerProtocol.swift in Sources */,
 				80B7321D1DDA4AA2006653BF /* RestCommandBuilder.swift in Sources */,
 				805637B61DDBAE3D00DC5D48 /* GetAllProjectsResponse.swift in Sources */,
 				80B732141DDA3D59006653BF /* ResponseObjectSerializableProtocol.swift in Sources */,

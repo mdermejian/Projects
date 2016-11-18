@@ -46,7 +46,7 @@ class ProjectCell: UITableViewCell {
 			                          filter: nil,
 			                          progress: nil,
 			                          progressQueue: DispatchQueue.global(qos: DispatchQoS.QoSClass.background),
-			                          imageTransition: UIImageView.ImageTransition.crossDissolve(0.1),
+			                          imageTransition: .crossDissolve(0.1),
 			                          runImageTransitionIfCached: false,
 			                          completion: nil)
 		}else {

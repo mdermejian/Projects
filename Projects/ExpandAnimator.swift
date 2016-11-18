@@ -39,7 +39,7 @@ class ExpandAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 		guard let fromViewController = transitionContext.viewController(forKey: .from),
 		let fromViewFrame = transitionContext.viewController(forKey: .from)?.view.frame,
 		let openingFrame = openingFrame else {
-			returngith
+			return
 		}
 		
 		// To VC
@@ -93,16 +93,6 @@ class ExpandAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 				transitionContext.completeTransition(finished)
 				
 			})
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			
 		case .dismiss: break
 		}

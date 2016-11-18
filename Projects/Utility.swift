@@ -38,6 +38,9 @@ final class Utility {
 	static var lightGray: UIColor {
 		return UIColor(rgb: 0x9E9E9E)
 	}
-
+	
+	static var teamworkBlue: UIColor {
+		return UIColor(red: 56/255, green: 83/255, blue: 93/255, alpha: 1.0)
+	}
 
 }

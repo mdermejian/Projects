@@ -41,6 +41,12 @@ final class Project: CustomStringConvertible {
 	var defaultProjectImage: UIImage {
 		return UIImage(named: "teamwork")!
 	}
+	
+	private var formatter: DateFormatter {
+		let formatter = DateFormatter.internetDateTime()
+		formatter!.dateFormat = "yyyyMMdd"
+		return formatter!
+	}
 
 	// MARK: - ResponseObjectSerializable protocol implementation
 
@@ -61,38 +67,13 @@ final class Project: CustomStringConvertible {
 		if let logo = representation[Fields.Logo.rawValue] as? String { self.logo = logo }
 		
 		if let creationDate = representation[Fields.CreatedOn.rawValue] as? String { self.creationDate = NSDate(fromRFC3339String: creationDate) as Date }
-		
-		let formatter = DateFormatter.internetDateTime()
-		formatter?.dateFormat = "yyyyMMdd"
-		if let startDate = representation[Fields.StartDate.rawValue] as? String { self.startDate = formatter?.date(from: startDate) }
-		if let endDate = representation[Fields.EndDate.rawValue] as? String { self.endDate = formatter?.date(from: endDate) }
+		if let startDate = representation[Fields.StartDate.rawValue] as? String { self.startDate = formatter.date(from: startDate) }
+		if let endDate = representation[Fields.EndDate.rawValue] as? String { self.endDate = formatter.date(from: endDate) }
 		if let status = representation[Fields.Status.rawValue] as? String { self.status = ProjectStatus(rawValue: status)! }
 		if let substatus = representation[Fields.Substatus.rawValue] as? String { self.substatus = ProjectSubStatus(rawValue: substatus)! }
 
 	}
 }
-
-/*
-// MARK: - ResponseCollectionSerializable protocol implementation
-
-extension Project: ResponseCollectionSerializable {
-	
-	static func collection(from response: HTTPURLResponse, withRepresentation representation: Any) -> [Project] {
-		var projects: [Project] = []
-		
-		if let representation = representation as? [[String: AnyObject]] {
-			for projectRepresentation in representation {
-				if let project = Project(response: response, representation: projectRepresentation as [String: AnyObject]) {
-					projects.append(project)
-				}
-			}
-		}
-		
-		return projects
-	}
-
-}
-*/
 
 // MARK: - Comparable protocol implementation
 

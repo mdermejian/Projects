@@ -16,7 +16,6 @@ class ProjectsController {
 		Alamofire.request(request)
 			.validate()
 			.responseObject(completionHandler: { (response: DataResponse<GetAllProjectsResponse>) in
-				debugPrint(response)
 				completion(response.result.isSuccess, response.result.value?.projects)
 			})
 	}

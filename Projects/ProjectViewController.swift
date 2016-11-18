@@ -31,11 +31,13 @@ class ProjectViewController: UIViewController {
 			
 		}
 	}
-
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		updateUI()
+    }
+	
+	private func updateUI() {
 		guard let project = project else { return }
 		
 		let placeholderImage = project.defaultProjectImage
@@ -45,13 +47,12 @@ class ProjectViewController: UIViewController {
 			                          filter: nil,
 			                          progress: nil,
 			                          progressQueue: DispatchQueue.global(qos: DispatchQoS.QoSClass.background),
-			                          imageTransition: UIImageView.ImageTransition.crossDissolve(0.1),
+			                          imageTransition: .crossDissolve(0.1),
 			                          runImageTransitionIfCached: false,
 			                          completion: nil)
 		}else {
 			logoImageView.image = placeholderImage
 		}
-		
 		
 		nameLabel.text = project.name
 		descriptionLabel.text = project.projectDescription
@@ -63,10 +64,8 @@ class ProjectViewController: UIViewController {
 		statusLabel.text = project.status.description
 		subStatusImageView.image = project.substatus.image
 		subStatusLabel.text = project.substatus.description
-		
 		starredView.isEnabled = project.starred
 
-
-    }
+	}
 	
 }
