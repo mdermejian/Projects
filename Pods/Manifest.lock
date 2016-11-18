@@ -1,0 +1,39 @@
+PODS:
+  - Alamofire (4.0.1)
+  - AlamofireImage (3.1.0):
+    - Alamofire (~> 4.0)
+  - Commons (0.1)
+  - DateTools (1.7.0)
+  - SwiftCommons (0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - AlamofireImage (~> 3.1)
+  - Commons (from `https://github.com/mdermejian/Commons.git`)
+  - DateTools (~> 1.7)
+  - SwiftCommons (from `https://github.com/mdermejian/SwiftCommons.git`)
+
+EXTERNAL SOURCES:
+  Commons:
+    :git: https://github.com/mdermejian/Commons.git
+  SwiftCommons:
+    :git: https://github.com/mdermejian/SwiftCommons.git
+
+CHECKOUT OPTIONS:
+  Commons:
+    :commit: 00a272cceff8cf96cb0bdcda689226ae71943533
+    :git: https://github.com/mdermejian/Commons.git
+  SwiftCommons:
+    :commit: 5cd75eb2df350857d14159ecb5176edf752d256e
+    :git: https://github.com/mdermejian/SwiftCommons.git
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireImage: bb8c8351c51cb1633bb6be69b6dbbaff37ce65b7
+  Commons: c259d06ad51295713f408d29273f252c8409d9ec
+  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  SwiftCommons: ebd24e22bce59c839a7f7d41bda7dd02b6b9d7aa
+
+PODFILE CHECKSUM: afa2b6e45abbe8e405083d7f21e78c975b33e9ae
+
+COCOAPODS: 1.0.1
