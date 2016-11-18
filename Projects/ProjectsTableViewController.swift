@@ -30,10 +30,9 @@ class ProjectsTableViewController: UIViewController {
 	}
 
 	fileprivate struct Keys {
-		static let CellReuseIdentifier: String = "ProjectCell"
+		static let ProjectCellReuseIdentifier: String = "ProjectCell"
 		static let DecreaseAnimationDuration: CFTimeInterval = 0.35
 		static let IncreaseAnimationDuration: CFTimeInterval = 0.45
-		static let ProjectViewSegueIdentifier: String = "showProject"
 	}
 
     override func viewDidLoad() {
@@ -53,7 +52,7 @@ class ProjectsTableViewController: UIViewController {
 		overlay = UIView()
 		overlay.frame = view.frame
 		overlay.alpha = 1
-		overlay.backgroundColor = UIColor(red: 56/255, green: 83/255, blue: 93/255, alpha: 1.0)
+		overlay.backgroundColor = Utility.teamworkBlue
 		UIApplication.shared.keyWindow?.addSubview(overlay)
 		
 		let image = UIImage(named: "teamwork_large")!
@@ -67,13 +66,6 @@ class ProjectsTableViewController: UIViewController {
 		overlay.layer.addSublayer(imageLayer)
 	}
 
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == Keys.ProjectViewSegueIdentifier {
-			if let destinationVC = segue.destination as? ProjectViewController {
-				destinationVC.project = selectedProject
-			}
-		}
-	}
 }
 
 extension ProjectsTableViewController: UITableViewDelegate, UITableViewDataSource {
@@ -90,30 +82,23 @@ extension ProjectsTableViewController: UITableViewDelegate, UITableViewDataSourc
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
-		let cell = tableView.dequeueReusableCell(withIdentifier: Keys.CellReuseIdentifier, for: indexPath) as! ProjectCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: Keys.ProjectCellReuseIdentifier, for: indexPath) as! ProjectCell
 		cell.project = projects[indexPath.row]
 		return cell
 	}
 
+	// MARK: - Table view delegate
+
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		
 		selectedProject = projects[indexPath.row]
-		performSegue(withIdentifier: "showProject", sender: nil)
+		performSegue(withIdentifier: ViewControllerSegue.showProject.rawValue, sender: nil)
 		
-		/*
-		// get the frame of the cell
-		selectedCellFrame = tableView.convert(tableView.rectForRow(at: indexPath), to: view)
-		
-		// present the project detail view controller
-		let detailVC = ProjectViewController()
-		detailVC.transitioningDelegate = self
-		detailVC.modalPresentationStyle = .custom
-		detailVC.view.backgroundColor = UIColor.purple
-		present(detailVC, animated: true, completion: nil)
-		*/
 	}
 	
 }
+
+// MARK: - CAAnimationDelegate
 
 extension ProjectsTableViewController: CAAnimationDelegate {
 	
@@ -160,36 +145,25 @@ extension ProjectsTableViewController: CAAnimationDelegate {
 	}
 }
 
+// MARK: - SegueHandler
 
-extension ProjectsTableViewController: UIViewControllerTransitioningDelegate {
-	
-	func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-		
-		guard let selectedCellFrame = selectedCellFrame else { return nil }
-		
-		let presentationAnimator = ExpandAnimator.animator
-		presentationAnimator.openingFrame = selectedCellFrame
-		presentationAnimator.transitionMode = .present
-		return presentationAnimator
+extension ProjectsTableViewController: SegueHandler {
+
+	enum ViewControllerSegue : String {
+		case showProject = "showProject"
+		case unnamed = ""
 	}
 	
-	func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		
-		return nil
-		
-		guard let selectedCellFrame = selectedCellFrame else { return nil }
-		
-		let presentationAnimator = ExpandAnimator.animator
-		presentationAnimator.openingFrame = selectedCellFrame
-		presentationAnimator.transitionMode = .dismiss
-		return presentationAnimator
+		switch segueIdentifierCase(for: segue) {
+		case .showProject:
+			if let destinationVC = segue.destination as? ProjectViewController {
+				destinationVC.project = selectedProject
+			}
+		case .unnamed:
+			assertionFailure("Segue identifier empty; all segues should have an identifier.")
+		}
 
 	}
-	
 }
-
-
-
-
-
-
