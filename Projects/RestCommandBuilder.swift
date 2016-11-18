@@ -45,6 +45,7 @@ enum RestCommandBuilder: URLRequestConvertible {
 		urlRequest.timeoutInterval = timeoutInterval
 		
 		urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+		urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
 		
 		if let data = "\(Constants.username):\(Constants.password)".data(using: .utf8) {
 			let credential = data.base64EncodedString(options: [])

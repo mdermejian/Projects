@@ -14,7 +14,6 @@
 		806294661DDC71D300FC69AA /* ProjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806294651DDC71D300FC69AA /* ProjectCell.swift */; };
 		806294681DDC78B200FC69AA /* StarShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806294671DDC78B200FC69AA /* StarShapeView.swift */; };
 		8062946A1DDDB9DD00FC69AA /* ProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806294691DDDB9DD00FC69AA /* ProjectViewController.swift */; };
-		8062946C1DDDB9F800FC69AA /* ExpandAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062946B1DDDB9F800FC69AA /* ExpandAnimator.swift */; };
 		8062946F1DDEFFE400FC69AA /* SegueHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8062946E1DDEFFE400FC69AA /* SegueHandlerProtocol.swift */; };
 		80B731EF1DDA362F006653BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B731EE1DDA362F006653BF /* AppDelegate.swift */; };
 		80B731F41DDA362F006653BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B731F21DDA362F006653BF /* Main.storyboard */; };
@@ -52,7 +51,6 @@
 		806294651DDC71D300FC69AA /* ProjectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectCell.swift; sourceTree = "<group>"; };
 		806294671DDC78B200FC69AA /* StarShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarShapeView.swift; sourceTree = "<group>"; };
 		806294691DDDB9DD00FC69AA /* ProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectViewController.swift; sourceTree = "<group>"; };
-		8062946B1DDDB9F800FC69AA /* ExpandAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandAnimator.swift; sourceTree = "<group>"; };
 		8062946E1DDEFFE400FC69AA /* SegueHandlerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandlerProtocol.swift; sourceTree = "<group>"; };
 		80B731EB1DDA362F006653BF /* Projects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Projects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B731EE1DDA362F006653BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 				806294651DDC71D300FC69AA /* ProjectCell.swift */,
 				806294671DDC78B200FC69AA /* StarShapeView.swift */,
 				806294691DDDB9DD00FC69AA /* ProjectViewController.swift */,
-				8062946B1DDDB9F800FC69AA /* ExpandAnimator.swift */,
 				806294611DDBB6DB00FC69AA /* Utility.swift */,
 				80B731F21DDA362F006653BF /* Main.storyboard */,
 				80B731F51DDA362F006653BF /* Assets.xcassets */,
@@ -420,7 +417,6 @@
 				80B7321D1DDA4AA2006653BF /* RestCommandBuilder.swift in Sources */,
 				805637B61DDBAE3D00DC5D48 /* GetAllProjectsResponse.swift in Sources */,
 				80B732141DDA3D59006653BF /* ResponseObjectSerializableProtocol.swift in Sources */,
-				8062946C1DDDB9F800FC69AA /* ExpandAnimator.swift in Sources */,
 				806294661DDC71D300FC69AA /* ProjectCell.swift in Sources */,
 				80B732181DDA3D8C006653BF /* TWError.swift in Sources */,
 				80B732231DDA5FB4006653BF /* ProjectSubStatus.swift in Sources */,
