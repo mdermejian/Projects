@@ -1,5 +1,9 @@
 # iOS project using TeamWork.com APIs
 
+TODO:
+- documentation
+
+
 Please use Projects.xcworkspace to open the project in XCode
 
 Dev environment:
